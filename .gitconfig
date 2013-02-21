@@ -1,6 +1,6 @@
 [user]
-  name = Gregory Desfour
-	email = gregory.desfour@accedo.tv
+    name = Gregory Desfour
+    email = gregory.desfour@accedo.tv
 [alias]
     s = status
     pr = pull --rebase
