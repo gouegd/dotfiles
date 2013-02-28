@@ -12,6 +12,8 @@
     br = branch 
     diff = diff --word-diff
     dc = diff --cached
+    #verifier ce qu'on va commiter (et non pusher)
+    ds = diff --staged
     ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
     ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
     lds = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=short
@@ -24,3 +26,6 @@
     grep = grep -Ii
     la = "!git config -l | grep alias | cut -c 7-"
     logtree = "log --graph --oneline --decorate --all"
+    ri = rebase -i
+[pull]
+    rebase = true
