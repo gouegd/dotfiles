@@ -9,7 +9,7 @@
     cl = clone
     ci = commit
     co = checkout
-    br = branch 
+    br = branch
     diff = diff --word-diff
     dc = diff --cached
     #verifier ce qu'on va commiter (et non pusher)
@@ -21,6 +21,7 @@
     sl = stash list
     sa = stash apply
     ss = stash save
+    sp = stash pop
     conf = config --edit --global
     f = "!git ls-files | grep -i"
     grep = grep -Ii
@@ -29,3 +30,5 @@
     ri = rebase -i
 [pull]
     rebase = true
+[push]
+    default = simple
