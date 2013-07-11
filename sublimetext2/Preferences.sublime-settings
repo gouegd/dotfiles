@@ -10,5 +10,7 @@
 		"Git",
 		"SFTP"
 	],
-	"tab_completion": false
+	"tab_completion": false,
+	// Greg: ignoring "target" for Maven projects
+	"folder_exclude_patterns": [".svn", ".git", ".hg", "CVS", "target"]
 }
