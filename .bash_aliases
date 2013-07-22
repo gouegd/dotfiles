@@ -38,3 +38,4 @@ alias psg='ps -ef | grep'
 alias lt='ll --sort=time'
 
 alias st=subl
+alias pstree='pstree -G'
