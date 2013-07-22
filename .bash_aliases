@@ -36,3 +36,5 @@ alias .5='cd ../../../../..'
 
 alias psg='ps -ef | grep'
 alias lt='ll --sort=time'
+
+alias st=subl

@@ -1,6 +1,10 @@
 [user]
     name = Gregory Desfour
-    email = gregory.desfour@accedo.tv
+    email = greg.desfour@kiwiplan.co.nz
+[color]
+    diff = auto
+    status = auto
+    branch = auto
 [alias]
     s = status
     pr = pull --rebase
