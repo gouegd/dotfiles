@@ -22,6 +22,8 @@
     ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
     lds = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=short
     ld = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=relative
+    lt = "log --graph --oneline --decorate --all"
+    logtree = "log --graph --oneline --decorate --all"
     sl = stash list
     sa = stash apply
     ss = stash save
@@ -30,7 +32,6 @@
     f = "!git ls-files | grep -i"
     grep = grep -Ii
     la = "!git config -l | grep alias | cut -c 7-"
-    logtree = "log --graph --oneline --decorate --all"
     ri = rebase -i
 [pull]
     rebase = true
