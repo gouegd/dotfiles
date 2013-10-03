@@ -33,6 +33,7 @@
     grep = grep -Ii
     la = "!git config -l | grep alias | cut -c 7-"
     ri = rebase -i
+	unstage = reset HEAD --
 [pull]
     rebase = true
 [push]

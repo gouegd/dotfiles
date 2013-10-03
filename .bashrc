@@ -80,6 +80,8 @@ export MAVEN_OPTS="-Xms256m -Xmx512m"
 export REBEL_HOME=/usr/local/java/eclipse-4.2/plugins/org.zeroturnaround.eclipse.embedder_5.3.0.RELEASE-201305281235/jrebel/
 export SITE_NAME=case_7722
 export LANG=en_NZ.UTF-8
+export LC_ALL=en_NZ.UTF-8
+export LC_TYPE=en_NZ.UTF-8
 
 PATH=$M2_HOME/bin:/home/greg.desfour/projects/maven-misc/bin:$PATH
 

@@ -35,7 +35,9 @@ alias .4='cd ../../../..'
 alias .5='cd ../../../../..'
 
 alias psg='ps -ef | grep'
-alias lt='ll --sort=time'
+alias lt='ls -alFrt'
 
 alias st=subl
 alias pstree='pstree -G'
+#Not the actual credentials :)
+alias sql='mysql -utest -ptest case_7722'
