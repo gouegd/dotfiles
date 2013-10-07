@@ -33,8 +33,13 @@
     grep = grep -Ii
     la = "!git config -l | grep alias | cut -c 7-"
     ri = rebase -i
-	unstage = reset HEAD --
+    unstage = reset HEAD --
+    d = difftool
 [pull]
     rebase = true
 [push]
     default = simple
+[diff]
+    tool = vimdiff
+[difftool]
+    prompt = false
