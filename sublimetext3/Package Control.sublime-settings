@@ -1,6 +1,10 @@
 {
 	"installed_packages":
 	[
-		"SideBarEnhancements"
+		"BracketHighlighter",
+		"CopyEdit",
+		"Modific",
+		"SideBarEnhancements",
+		"TrailingSpaces"
 	]
 }
