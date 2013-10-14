@@ -1,5 +1,0 @@
-{
-  // Live mode evaluates changes every time file is modified,
-  // Set false to only evaluate when file is saved.
-  "live_mode": false
-}

@@ -1,0 +1,69 @@
+{
+    "search_threshold": 8000,
+    "scope_brackets": [
+        {
+            "name": "single_quote",
+            "enabled": false
+        },
+        {
+            "name": "double_quote",
+            "enabled": false
+        },
+    ],
+
+    "bracket_styles": {
+        "default": {
+            "icon": "dot",
+            // BH1's original default color for reference
+            "color": "entity.name.class",
+            // "color": "brackethighlighter.default"
+            // "style": "solid"
+        },
+        "unmatched": {
+            "icon": "question",
+            // "color": "brackethighlighter.unmatched",
+            "style": "outline"
+        },
+        // User defined region styles
+        "curly": {
+            "icon": "curly_bracket"
+            // "color": "brackethighlighter.curly",
+            // "style": "underline"
+        },
+        "round": {
+            "icon": "round_bracket"
+            // "color": "brackethighlighter.round",
+            // "style": "underline"
+        },
+        "square": {
+            "icon": "square_bracket"
+            // "color": "brackethighlighter.square",
+            // "style": "underline"
+        },
+        "angle": {
+            "icon": "angle_bracket"
+            // "color": "brackethighlighter.angle",
+            // "style": "underline"
+        },
+        "tag": {
+            "icon": "tag",
+            // "color": "brackethighlighter.tag",
+            "style": "outline"
+        },
+        "single_quote": {
+            "icon": "single_quote"
+            // "color": "brackethighlighter.quote",
+            // "style": "underline"
+        },
+        "double_quote": {
+            "icon": "double_quote"
+            // "color": "brackethighlighter.quote",
+            // "style": "underline"
+        },
+        "regex": {
+            "icon": "regex"
+            // "color": "brackethighlighter.quote",
+            // "style": "underline"
+        }
+    }
+}

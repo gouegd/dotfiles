@@ -35,6 +35,7 @@
     ri = rebase -i
     unstage = reset HEAD --
     d = difftool
+    all = "!git add -A :/"
 [pull]
     rebase = true
 [push]

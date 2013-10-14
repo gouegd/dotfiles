@@ -41,3 +41,5 @@ alias st=subl
 alias pstree='pstree -G'
 #Not the actual credentials :)
 alias sql='mysql -utest -ptest case_7722'
+#
+alias mvn_create_install='mvn project:local-create-install-sql'
