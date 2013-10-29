@@ -106,6 +106,8 @@ export KWSQL_USER KWSQL_PASS
 
 #Add Ctrl+] shortcut to copy the current bash command
 bind '"\C-]":"\C-e\C-u xclip <<"EOF"\n\C-y\nEOF\n"'
+#Ctrl+G launches lfm
+bind '"\C-G":"\C-e\C-ulfm\n"'
 
 # Last file manager: stay in browsed directory on quit
 lfm()
