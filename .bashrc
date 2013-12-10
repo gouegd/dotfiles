@@ -78,12 +78,12 @@ export JAVA_HOME=/usr/lib/jvm/jdk1.6.0_26
 export M2_HOME=/usr/local/java/maven3
 export MAVEN_OPTS="-Xms256m -Xmx512m"
 export REBEL_HOME=/usr/local/java/eclipse-4.2/plugins/org.zeroturnaround.eclipse.embedder_5.3.0.RELEASE-201305281235/jrebel/
-export SITE_NAME=case_7722
+export SITE_NAME=mes_8
 export LANG=en_NZ.UTF-8
 export LC_ALL=en_NZ.UTF-8
 export LC_TYPE=en_NZ.UTF-8
 
-PATH=$M2_HOME/bin:/home/greg.desfour/projects/maven-misc/bin:$PATH
+PATH=$M2_HOME/bin:/home/greg.desfour/projects/maven-misc/bin:/home/greg.desfour/workspace/gitd:$PATH
 
 #Kiwiplan framework
 KIWI=/kiwi
@@ -93,7 +93,7 @@ SQL=$KIWI/sql
 SCP=$KIWI/scp
 BIN=$KIWI/bin
 KIWISEA=$DATA:$PROGS:$SQL:$SCP:$BIN
-LD_LIBRARY_PATH=/kiwi/progs
+LD_LIBRARY_PATH=/kiwi/progs:/opt/jprofiler4/bin/linux-x64
 PATH=$KIWISEA:$PATH
 export PATH
 export LD_LIBRARY_PATH

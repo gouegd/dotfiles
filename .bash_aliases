@@ -40,6 +40,6 @@ alias lt='ls -alFrt'
 alias st=subl
 alias pstree='pstree -G'
 #Not the actual credentials :)
-alias sql='mysql -utest -ptest case_7722'
-#
+alias sql='mysql -utest -ptest pcs_7721'
+#the command to parse the hibernate mapping and create the install script
 alias mvn_create_install='mvn project:local-create-install-sql'
