@@ -45,9 +45,11 @@ alias la='ls -AG'
 alias l='ls -CFG'
 alias ls='ls -G'
 
+alias grep='grep --color'
+
 # Add an "alert" alias for long running commands. Use like so:
 # sleep 10; alert
-alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
+alias alert='terminal-notifier -message "Job done :)"'
 
 
 # Alias definitions.
@@ -67,7 +69,7 @@ bind '"\C-G":"\C-e\C-ulfm\n"'
 # Last file manager: stay in browsed directory on quit
 lfm()
 {
-/usr/bin/lfm "$*"
+/usr/local/bin/lfm "$*"
 LFMPATHFILE=/tmp/lfm-$$.path
 cd "`cat $LFMPATHFILE`"
 rm -f $LFMPATHFILE
