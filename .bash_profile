@@ -7,7 +7,7 @@
 export SVN_EDITOR=nano
 alias st="open -a Sublime\ Text"
 alias ..="cd .."
-export PATH=/Applications/Android\ Studio.app/sdk/tools/:/Applications/Android\ Studio.app/sdk/platform-tools/:$PATH
+export PATH=/Applications/Android\ Studio.app/sdk/tools:/Applications/Android\ Studio.app/sdk/platform-tools:/Applications/Android\ Studio.app/sdk/build-tools/android-4.4W:$PATH
 
 bind Space:magic-space
 
@@ -67,10 +67,33 @@ bind '"\C-]":"\C-e\C-u xclip <<"EOF"\n\C-y\nEOF\n"'
 bind '"\C-G":"\C-e\C-ulfm\n"'
 
 # Last file manager: stay in browsed directory on quit
-lfm()
-{
+lfm() {
 /usr/local/bin/lfm "$*"
 LFMPATHFILE=/tmp/lfm-$$.path
 cd "`cat $LFMPATHFILE`"
 rm -f $LFMPATHFILE
+}
+
+# returns the absolute path from a relative one 
+abspath() {
+  # $1 : relative filename
+  if [ -d "$1" ]; then
+      # dir
+      echo "$(cd $1; pwd)"
+  elif [ -f "$1" ]; then
+      # file
+      if [[ $1 == */* ]]; then
+          echo "$(cd ${1%/*}; pwd)/${1##*/}"
+      else
+          echo "$(pwd)/$1"
+      fi
+  fi
+}
+
+# Use IntelliJ's diff on 2 files/folders
+idiff() {
+  idea='/Applications/IntelliJ IDEA 13 CE.app/Contents/MacOS/idea'
+  left=`abspath $1`
+  right=`abspath $2`
+  "$idea" diff $left $right
 }
