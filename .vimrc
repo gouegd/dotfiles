@@ -107,6 +107,9 @@ set nrformats=
 hi Search cterm=NONE ctermfg=NONE ctermbg=blue
 hi Search guifg=NONE guibg=blue
 
+" show line break with ellipsis
+:set showbreak=…
+
 let mapleader=","
 let g:EasyMotion_leader_key = '<Leader>'
 " shortcuts
