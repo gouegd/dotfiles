@@ -37,9 +37,5 @@ alias .5='cd ../../../../..'
 alias psg='ps -ef | grep'
 alias lt='ls -alFrt'
 
-alias st=subl
 alias pstree='pstree -G'
-#Not the actual credentials :)
-alias sql='mysql -utest -ptest pcs_7721'
-#the command to parse the hibernate mapping and create the install script
-alias mvn_create_install='mvn project:local-create-install-sql'
+alias json='python -m json.tool | pygmentize -l json'

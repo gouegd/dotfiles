@@ -4,16 +4,19 @@
 [ -z "$PS1" ] && return
 
 # Mac stuff
+export DOCKER_HOST=tcp://192.168.59.103:2376
+export DOCKER_CERT_PATH=/Users/gouegd/.boot2docker/certs/boot2docker-vm
+export DOCKER_TLS_VERIFY=1
 export SVN_EDITOR=nano
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_45.jdk/Contents/Home
 alias st="open -a Sublime\ Text"
 alias ..="cd .."
-export PATH=/Applications/Android\ Studio.app/sdk/tools:/Applications/Android\ Studio.app/sdk/platform-tools:/Applications/Android\ Studio.app/sdk/build-tools/android-4.4W:$PATH
 
 bind Space:magic-space
 
 # git-aware bash line
-if [ -f /Applications/Xcode.app/Contents/Developer/usr/share/git-core/git-prompt.sh ]; then
-  source /Applications/Xcode.app/Contents/Developer/usr/share/git-core/git-prompt.sh
+if [ -f /Library/Developer/CommandLineTools/usr/share/git-core/git-prompt.sh ]; then
+  source /Library/Developer/CommandLineTools/usr/share/git-core/git-prompt.sh
   export PS1='\[\e[7;33m\]$(__git_ps1 "%s")\[\e[0;36m\] \w\[\e[0m\] $ '
 fi
 
