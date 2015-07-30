@@ -36,6 +36,7 @@
     unstage = reset HEAD --
     d = difftool
     all = "!git add -A :/"
+    subup =submodule update --rebase --remote
 [pull]
     rebase = true
 [push]
