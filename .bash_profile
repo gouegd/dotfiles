@@ -8,15 +8,16 @@ export DOCKER_HOST=tcp://192.168.59.103:2376
 export DOCKER_CERT_PATH=/Users/gouegd/.boot2docker/certs/boot2docker-vm
 export DOCKER_TLS_VERIFY=1
 export SVN_EDITOR=nano
-export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_45.jdk/Contents/Home
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_51.jdk/Contents/Home
+export SPRING_OUTPUT_ANSI_ENABLED=ALWAYS
 alias st="open -a Sublime\ Text"
 alias ..="cd .."
 
 bind Space:magic-space
 
 # git-aware bash line
-if [ -f /Library/Developer/CommandLineTools/usr/share/git-core/git-prompt.sh ]; then
-  source /Library/Developer/CommandLineTools/usr/share/git-core/git-prompt.sh
+if [ -f `brew --prefix`/etc/bash_completion.d/git-prompt.sh ]; then
+  source `brew --prefix`/etc/bash_completion.d/git-prompt.sh
   export PS1='\[\e[7;33m\]$(__git_ps1 "%s")\[\e[0;36m\] \w\[\e[0m\] $ '
 fi
 
@@ -95,7 +96,7 @@ abspath() {
 
 # Use IntelliJ's diff on 2 files/folders
 idiff() {
-  idea='/Applications/IntelliJ IDEA 13 CE.app/Contents/MacOS/idea'
+  idea='/Applications/IntelliJ IDEA 14 CE.app/Contents/MacOS/idea'
   left=`abspath $1`
   right=`abspath $2`
   "$idea" diff $left $right
