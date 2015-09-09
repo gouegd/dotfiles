@@ -7,7 +7,6 @@
     branch = auto
 [alias]
     s = status
-    pr = pull --rebase
     cp = cherry-pick
     st = status -s
     cl = clone
@@ -36,7 +35,9 @@
     unstage = reset HEAD --
     d = difftool
     all = "!git add -A :/"
-    subup =submodule update --rebase --remote
+    subup = submodule update --rebase --remote
+    pullall = "!git pull --recurse-submodules && git submodule update --recursive"
+    pa = "!git pullall"
 [pull]
     rebase = true
 [push]
