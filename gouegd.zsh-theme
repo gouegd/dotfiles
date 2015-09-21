@@ -8,7 +8,7 @@ ZSH_THEME_GIT_PROMPT_CLEAN=""
 
 #status
 ZSH_THEME_GIT_PROMPT_AHEAD="%{$fg[magenta]%} ↑"
-ZSH_THEME_GIT_PROMPT_STASHED="%{$fg[magenta]%} š"
+ZSH_THEME_GIT_PROMPT_STASHED="%{$fg[red]%} ♥"
 
 PROMPT='${retStatus}%{$fg[cyan]%}%1~%{$reset_color%}$(git_prompt_info)$(git_prompt_status) %{$reset_color%}'
 
