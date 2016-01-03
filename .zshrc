@@ -128,3 +128,6 @@ alias lt='ls -alFrt'
 alias pstree='pstree -G'
 alias json='python -m json.tool | pygmentize -l json'
 alias grep='grep --color'
+
+export NVM_DIR="/Users/greg/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
