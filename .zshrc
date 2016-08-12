@@ -57,9 +57,6 @@ plugins=(osx fasd)
 # User configuration
 
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
-export DOCKER_HOST=tcp://192.168.59.103:2376
-export DOCKER_CERT_PATH=/Users/gouegd/.boot2docker/certs/boot2docker-vm
-export DOCKER_TLS_VERIFY=1
 export SVN_EDITOR=vim
 export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_51.jdk/Contents/Home
 export ANDROID_HOME=/usr/local/opt/android-sdk
