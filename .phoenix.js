@@ -36,9 +36,7 @@ var config = {
 };
 
 var setupHandlers = function(){
-    var modKeys1 =   ['ctrl', 'alt', 'cmd'],
-        modKeys2 = ['ctrl', 'alt', 'shift'];
-
+    var modKeys1 = ['ctrl', 'alt', 'cmd'];
 
     return {
         up:          new Key('up',    modKeys1, putWindow('up')),
@@ -52,8 +50,9 @@ var setupHandlers = function(){
         bottomRight: new Key('g',     modKeys1, putWindow('bottomRight')),
 
         center:      new Key('c',     modKeys1, putWindow('center')),
-        maximised:   new Key('m',     modKeys1, maximise()),
-        showApp:     new Key('x',     modKeys1, showApp('Atom')),
+        maximised:   new Key('space', modKeys1, maximise()),
+        atom:        new Key('space', ['alt', 'cmd'], showApp('Atom')),
+        iterm:       new Key('space', ['alt'], showApp('iTerm2')),
     };
 };
 
@@ -81,7 +80,7 @@ var putWindow = function(direction){
         var window = Window.focused();
         var screenFrame = window.screen().frameInRectangle();
 
-        windowMovedAlert(Movements[direction]);
+        // windowMovedAlert(Movements[direction]);
         setInSubFrame(window, screenFrame, direction);
     };
 };
@@ -117,7 +116,7 @@ var setInSubFrame = function(window, parentFrame, direction) {
  */
 var maximise = function() {
     return function () {
-        windowMovedAlert(Movements.maximised);
+        // windowMovedAlert(Movements.maximised);
         Window.focused().maximise();
     };
 };
