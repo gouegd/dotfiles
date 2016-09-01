@@ -51,8 +51,8 @@ var setupHandlers = function(){
 
         center:      new Key('c',     modKeys1, putWindow('center')),
         maximised:   new Key('space', modKeys1, maximise()),
-        atom:        new Key('space', ['alt', 'cmd'], showApp('Atom')),
-        iterm:       new Key('space', ['alt'], showApp('iTerm2')),
+        // atom:        new Key('space', ['alt', 'cmd'], showApp('Atom')),
+        // iterm:       new Key('space', ['alt'], showApp('iTerm2')),
     };
 };
 
