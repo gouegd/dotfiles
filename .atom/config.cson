@@ -1,0 +1,129 @@
+"*":
+  "atom-beautify":
+    general:
+      _analyticsUserId: "a5944747-9303-4244-a57b-f873315457b7"
+  "atom-material-ui":
+    compactTreeView: true
+    disableAnimations: true
+    panelContrast: true
+    showTabIcons: "Show on all tabs"
+    tabSize: "Small"
+    useRoboto: true
+  "atom-terminal":
+    app: "iTerm.app"
+  "atom-ternjs": {}
+  "autocomplete-plus":
+    backspaceTriggersAutocomplete: true
+  core:
+    customFileTypes:
+      "source.ini": [
+        ".buckconfig"
+        ".flowconfig"
+      ]
+      "source.json": [
+        ".arcconfig"
+        "BUCK.autodeps"
+      ]
+      "source.python": [
+        "BUCK"
+      ]
+    disabledPackages: [
+      "ide-flow"
+      "nuclide-flow"
+      "linter-flow"
+      "selection-highlight"
+      "linter-jshint"
+    ]
+    themes: [
+      "unity-ui"
+      "atom-panda-syntax"
+    ]
+  "cursor-history":
+    flashOnLand: true
+  docblockr: {}
+  editor:
+    backUpBeforeSaving: true
+    invisibles: {}
+    preferredLineLength: 120
+    tabType: "soft"
+  "exception-reporting":
+    userId: "01170781-7fbb-066a-e0b0-ad63d05a525f"
+  "file-watcher":
+    promptWhenFileHasChangedOnDisk: false
+  "git-diff":
+    showIconsInEditorGutter: true
+  "git-log": {}
+  "ide-flow": {}
+  jumpy: {}
+  "language-babel":
+    babelMapsPath: "./babelled/"
+    babelTranspilePath: "./babelled/"
+  linter:
+    errorPanelHeight: 116
+    showErrorPanel: false
+  "linter-eslint": {}
+  "linter-flow":
+    testRuleTwo: true
+  "linter-jshint":
+    disableWhenNoJshintrcFileInPath: true
+  "merge-conflicts": {}
+  minimap:
+    absoluteMode: true
+    plugins:
+      "split-diff": true
+      "split-diffDecorationsZIndex": 0
+  nuclide:
+    "nuclide-home":
+      showHome: false
+  "nuclide-flow": {}
+  "one-dark-ui": {}
+  "quick-highlight":
+    countDisplayPosition: "Right"
+    decorate: "highlight"
+  "run-command2": {}
+  "selection-highlight":
+    highlightBackground: true
+    lightTheme: true
+  "seti-icons":
+    iconsPlus: true
+    noColor: true
+  "split-diff":
+    diffWords: true
+    ignoreWhitespace: true
+    leftEditorColor: "red"
+    rightEditorColor: "green"
+    syncHorizontalScroll: true
+  "status-bar": {}
+  tabs:
+    enableVcsColoring: true
+  "tree-view": {}
+  "unity-dark-ui":
+    colorStatusIndicatorsInTreeView: true
+    showIcons: true
+  "unity-ui":
+    colorStatusIndicatorsInTreeView: true
+    showIcons: true
+  "vim-mode":
+    useClipboardAsDefaultRegister: true
+    wrapLeftRightMotion: true
+  "vim-surround": {}
+  "webbox-color": {}
+  welcome:
+    showOnStartup: false
+".babel.regexp.source":
+  editor:
+    preferredLineLength: 100
+".js.jsx.source":
+  editor:
+    preferredLineLength: 100
+    showIndentGuide: true
+".source.toml":
+  editor:
+    preferredLineLength: 100
+    tabLength: 4
+".source.ts":
+  editor:
+    preferredLineLength: 120
+".source.tsx":
+  editor:
+    preferredLineLength: 120

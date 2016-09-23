@@ -1,0 +1,10 @@
+.apm
+.git-history
+.node-gyp
+blob-store
+compile-cache
+git-time-machine
+packages
+recovery
+split-diff
+storage
