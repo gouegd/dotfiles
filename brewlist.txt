@@ -1,0 +1,1 @@
+android-sdk autoconf automake bash chromedriver cmake erlang fasd flow gettext git go gradle htop-osx hub hugo jpeg kubernetes-cli libpng libssh2 libtiff libtool mongodb neovim nginx node6-lts openssl pcre pkg-config protobuf rabbitmq readline redis ripgrep rust tig watchman wxmac xz

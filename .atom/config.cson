@@ -34,6 +34,10 @@
       "selection-highlight"
       "linter-jshint"
     ]
+    packagesWithKeymapsDisabled: [
+      "elm-format"
+    ]
+    telemetryConsent: "limited"
     themes: [
       "unity-ui"
       "atom-panda-syntax"
@@ -45,7 +49,10 @@
     backUpBeforeSaving: true
     invisibles: {}
     preferredLineLength: 120
+    showInvisibles: true
     tabType: "soft"
+  "elm-format":
+    showNotifications: true
   "exception-reporting":
     userId: "01170781-7fbb-066a-e0b0-ad63d05a525f"
   "file-watcher":
@@ -58,10 +65,13 @@
   "language-babel":
     babelMapsPath: "./babelled/"
     babelTranspilePath: "./babelled/"
+  "language-elm":
+    elmOraclePath: "/usr/local/bin/elm-oracle"
   linter:
     errorPanelHeight: 116
     showErrorPanel: false
-  "linter-eslint": {}
+  "linter-eslint":
+    fixOnSave: true
   "linter-flow":
     testRuleTwo: true
   "linter-jshint":
@@ -88,7 +98,6 @@
     iconsPlus: true
     noColor: true
   "split-diff":
-    diffWords: true
     ignoreWhitespace: true
     leftEditorColor: "red"
     rightEditorColor: "green"
@@ -113,6 +122,9 @@
 ".babel.regexp.source":
   editor:
     preferredLineLength: 100
+".elm.source":
+  editor:
+    preferredLineLength: 120
 ".js.jsx.source":
   editor:
     preferredLineLength: 100

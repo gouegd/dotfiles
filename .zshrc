@@ -130,3 +130,8 @@ alias t='tig status'
 
 export NVM_DIR="/Users/greg/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+export PATH="$HOME/.elmenv/bin:$PATH"
+eval "$(elmenv init -)"
+export GOPATH="$HOME/gocode"
+export PATH="$GOPATH/bin:$PATH"
+export PATH="$PATH:$(yarn global bin)"
