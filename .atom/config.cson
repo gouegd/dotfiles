@@ -2,6 +2,7 @@
   "atom-beautify":
     general:
       _analyticsUserId: "a5944747-9303-4244-a57b-f873315457b7"
+    go: {}
   "atom-material-ui":
     compactTreeView: true
     disableAnimations: true
@@ -14,6 +15,9 @@
   "atom-ternjs": {}
   "autocomplete-plus":
     backspaceTriggersAutocomplete: true
+  "bracket-matcher":
+    autocompleteBrackets: false
+    autocompleteSmartQuotes: false
   core:
     customFileTypes:
       "source.ini": [
@@ -33,14 +37,27 @@
       "linter-flow"
       "selection-highlight"
       "linter-jshint"
+      "vim-shift-movers"
+      "autocomplete-go"
+      "builder-go"
+      "go-config"
+      "go-debug"
+      "go-get"
+      "go-plus"
+      "godoc"
+      "gometalinter-linter"
+      "gorename"
+      "tester-go"
+      "navigator-go"
     ]
     packagesWithKeymapsDisabled: [
       "elm-format"
+      "bracket-matcher"
     ]
     telemetryConsent: "limited"
     themes: [
-      "unity-ui"
-      "atom-panda-syntax"
+      "unity-dark-ui"
+      "spacemacs-dark-syntax"
     ]
   "cursor-history":
     flashOnLand: true
@@ -49,10 +66,16 @@
     backUpBeforeSaving: true
     invisibles: {}
     preferredLineLength: 120
-    showInvisibles: true
     tabType: "soft"
   "elm-format":
     showNotifications: true
+  elmjutsu:
+    autocompleteEnabled: true
+    autocompleteSnippetsEnabled: true
+    cacheDirectory: "/var/folders/_v/21z0lsks5cs9bllyt0bf50br0000gn/T/elmjutsu3103S1wv6HcBQFSr"
+    hyperclickEnabled: true
+    sidekickPosition: "right"
+    sidekickSize: 300
   "exception-reporting":
     userId: "01170781-7fbb-066a-e0b0-ad63d05a525f"
   "file-watcher":
@@ -60,16 +83,20 @@
   "git-diff":
     showIconsInEditorGutter: true
   "git-log": {}
+  "go-plus":
+    currentPanelHeight: "30.86092715231788vh"
+  gofmt: {}
   "ide-flow": {}
   jumpy: {}
   "language-babel":
     babelMapsPath: "./babelled/"
     babelTranspilePath: "./babelled/"
   "language-elm":
+    autocompleteEnabled: false
     elmOraclePath: "/usr/local/bin/elm-oracle"
   linter:
     errorPanelHeight: 116
-    showErrorPanel: false
+    gutterPosition: "Left"
   "linter-eslint":
     fixOnSave: true
   "linter-flow":
@@ -98,6 +125,7 @@
     iconsPlus: true
     noColor: true
   "split-diff":
+    diffWords: true
     ignoreWhitespace: true
     leftEditorColor: "red"
     rightEditorColor: "green"
@@ -115,6 +143,12 @@
   "vim-mode":
     useClipboardAsDefaultRegister: true
     wrapLeftRightMotion: true
+  "vim-mode-plus":
+    highlightSearch: true
+    ignoreCaseForSearch: true
+    useClipboardAsDefaultRegister: true
+    useSmartcaseForSearch: true
+  "vim-mode-plus-move-selected-text": {}
   "vim-surround": {}
   "webbox-color": {}
   welcome:
@@ -124,6 +158,7 @@
     preferredLineLength: 100
 ".elm.source":
   editor:
+    autoIndentOnPaste: true
     preferredLineLength: 120
 ".js.jsx.source":
   editor:

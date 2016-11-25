@@ -32,13 +32,16 @@
   'ctrl-o':     'cursor-history:prev'
   'ctrl-cmd-i': 'cursor-history:next-within-editor'
   'ctrl-cmd-o': 'cursor-history:prev-within-editor'
+  'f1': 'elmjutsu:toggle-sidekick'
 
 # jumpy with vim-mode
 'atom-text-editor:not(.mini).vim-mode:not(.insert-mode):not(.jumpy-jump-mode)':
   'f': 'jumpy:toggle'
 
 # open-this with vim-mode keys
-'atom-text-editor.vim-mode.normal-mode':
+'atom-text-editor.vim-mode-plus.normal-mode':
   'g f':      'open-this:here'
   'ctrl-w f': 'open-this:split-down'
   'ctrl-w F': 'open-this:split-right'
+  ':': 'vim-mode-plus-ex-mode:open'
+  '!': 'vim-mode-plus-ex-mode:toggle-setting'
