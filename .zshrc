@@ -61,7 +61,6 @@ export SVN_EDITOR=vim
 export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_51.jdk/Contents/Home
 export ANDROID_HOME=/usr/local/opt/android-sdk
 export SPRING_OUTPUT_ANSI_ENABLED=ALWAYS
-alias st="open -a Sublime\ Text"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
@@ -127,7 +126,8 @@ alias pstree='pstree -G'
 alias json='python -m json.tool | pygmentize -l json'
 alias grep='grep --color'
 alias t='tig status'
-
+# renew dhcp
+alias renewdhcp='sudo ipconfig set en0 BOOTP && sudo ipconfig set en0 DHCP'
 export NVM_DIR="/Users/greg/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 export PATH="$HOME/.elmenv/bin:$PATH"
