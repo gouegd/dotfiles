@@ -49,6 +49,8 @@
       "gorename"
       "tester-go"
       "navigator-go"
+      "elmjutsu"
+      "tree-view-git-modified"
     ]
     packagesWithKeymapsDisabled: [
       "elm-format"
@@ -107,6 +109,8 @@
   minimap:
     absoluteMode: true
     plugins:
+      cursorline: true
+      cursorlineDecorationsZIndex: 0
       "split-diff": true
       "split-diffDecorationsZIndex": 0
   nuclide:
@@ -125,7 +129,6 @@
     iconsPlus: true
     noColor: true
   "split-diff":
-    diffWords: true
     ignoreWhitespace: true
     leftEditorColor: "red"
     rightEditorColor: "green"
@@ -133,7 +136,10 @@
   "status-bar": {}
   tabs:
     enableVcsColoring: true
-  "tree-view": {}
+  "tree-view":
+    autoReveal: true
+    squashDirectoryNames: true
+  "tree-view-git-status": {}
   "unity-dark-ui":
     colorStatusIndicatorsInTreeView: true
     showIcons: true
