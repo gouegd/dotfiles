@@ -28,7 +28,8 @@ atom-text-editor {
 
 // To style other content in the text editor's shadow DOM, use the ::shadow expression
 atom-text-editor::shadow .cursor {
-  // border-color: red;
+  border-color: red;
+  border-width: 2px;
 }
 
 // la branche git devrait ressortir un peu du reste en bleu
@@ -67,5 +68,24 @@ body atom-text-editor {
   }
   linter-bottom-tab.active {
     background-color: #888;
+  }
+}
+
+// use transparency to avoid hiding the linter's underlining
+atom-text-editor::shadow .cursor-line {
+  background-color: rgba(0,0,0,0.4);
+}
+
+// seems to be a thing on Unity Dark UI - put back git status text colors
+.tree-view {
+  .file, .directory.collapsed {
+    &.status-added {
+      color: #6dcc50;
+    }
+  }
+  .file, .directory.collapsed {
+    &.status-modified {
+      color: #f9a646;
+    }
   }
 }
