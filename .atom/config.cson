@@ -99,6 +99,7 @@
   linter:
     errorPanelHeight: 116
     gutterPosition: "Left"
+    showErrorPanel: false
   "linter-eslint":
     fixOnSave: true
   "linter-flow":
@@ -108,19 +109,24 @@
   "merge-conflicts": {}
   minimap:
     absoluteMode: true
+    displayCodeHighlights: false
     plugins:
-      cursorline: true
+      cursorline: false
       cursorlineDecorationsZIndex: 0
+      linter: true
+      linterDecorationsZIndex: 0
+      "minimap-quick-highlight": true
+      "minimap-quick-highlightDecorationsZIndex": 0
       "split-diff": true
       "split-diffDecorationsZIndex": 0
+  "minimap-linter": {}
   nuclide:
     "nuclide-home":
       showHome: false
   "nuclide-flow": {}
   "one-dark-ui": {}
   "quick-highlight":
-    countDisplayPosition: "Right"
-    decorate: "highlight"
+    countDisplayStyles: "badge badge-error icon icon-light-bulb"
   "run-command2": {}
   "selection-highlight":
     highlightBackground: true
@@ -138,6 +144,7 @@
     enableVcsColoring: true
   "tree-view":
     autoReveal: true
+    hideVcsIgnoredFiles: true
     squashDirectoryNames: true
   "tree-view-git-status": {}
   "unity-dark-ui":
@@ -150,8 +157,13 @@
     useClipboardAsDefaultRegister: true
     wrapLeftRightMotion: true
   "vim-mode-plus":
+    charactersToAddSpaceOnSurround: [
+      "{"
+      "}"
+    ]
     highlightSearch: true
     ignoreCaseForSearch: true
+    statusBarModeStringStyle: "long"
     useClipboardAsDefaultRegister: true
     useSmartcaseForSearch: true
   "vim-mode-plus-move-selected-text": {}

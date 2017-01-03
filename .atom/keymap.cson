@@ -45,3 +45,9 @@
   'ctrl-w F': 'open-this:split-right'
   ':': 'vim-mode-plus-ex-mode:open'
   '!': 'vim-mode-plus-ex-mode:toggle-setting'
+
+# quick-highlight
+'atom-text-editor.vim-mode-plus.normal-mode, atom-text-editor.vim-mode-plus.visual-mode':
+  'space m': 'quick-highlight:toggle'
+  'space M': 'quick-highlight:clear'
+  'g m': 'vim-mode-plus-user:quick-highlight'

@@ -27,10 +27,33 @@ atom-text-editor {
 }
 
 // To style other content in the text editor's shadow DOM, use the ::shadow expression
-atom-text-editor::shadow .cursor {
-  border-color: red;
-  border-width: 2px;
+atom-text-editor::shadow {
+  .cursor {
+    border-color: red;
+    border-width: 2px;
+  }
+  .selection .region {
+    background-color: rgba(255,0,0,.6);
+  }
+  // make comments' bg not opaque or it's hard to see the selection
+  .comment {
+    background-color: rgba(41, 46, 52, .5)
+  }
+  .line-number.cursor-line {
+    background-color: rgba(255,0,0,.6);
+    color: #888;
+    font-weight: normal;
+  }
+
+  // highlight stuff in red :)
+  .quick-highlight.box-selection .region {
+    border-radius: 0;
+    border-color: red;
+  }
+
 }
+
+
 
 // la branche git devrait ressortir un peu du reste en bleu
 .git-branch {
@@ -88,4 +111,38 @@ atom-text-editor::shadow .cursor-line {
       color: #f9a646;
     }
   }
+}
+
+
+// BIGGER Vim mode indication
+.status-bar-vim-mode-plus-normal,
+.status-bar-vim-mode-plus-insert,
+.status-bar-vim-mode-plus-visual {
+  font-weight: bold;
+  text-align: center;
+  font-size: 1.5em;
+  width: 18rem;
+  text-transform: uppercase;
+}
+
+.status-bar-vim-mode-plus-normal {
+  background: rgb(105, 238, 103);
+  color: rgb(4, 111, 11);
+}
+
+.status-bar-vim-mode-plus-insert {
+  background: rgb(7, 193, 242);
+  color: white;
+}
+
+.status-bar-vim-mode-plus-visual {
+  background: rgb(255, 206, 98);
+  color: rgb(168, 117, 5);
+}
+
+// minimap
+atom-text-editor atom-text-editor-minimap::shadow .minimap-visible-area::after,
+atom-text-editor::shadow atom-text-editor-minimap::shadow .minimap-visible-area::after {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-right: 1px solid white;
 }
