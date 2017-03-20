@@ -15,29 +15,25 @@
  * (To see them, uncomment and save)
  */
 
-// style the background color of the tree view
-.tree-view {
-  // background-color: whitesmoke;
-}
-
 // style the background and foreground colors on the atom-text-editor-element itself
-atom-text-editor {
-  // color: white;
-  // background-color: hsl(180, 24%, 12%);
+atom-text-editor,
+atom-text-editor .gutter,
+atom-panel .tree-view {
+  background-color: hsl(216, 6%, 10%);
 }
 
-// To style other content in the text editor's shadow DOM, use the ::shadow expression
-atom-text-editor::shadow {
+atom-text-editor.editor {
   .cursor {
     border-color: red;
     border-width: 2px;
   }
   .selection .region {
-    background-color: rgba(255,0,0,.6);
+    background-color: rgb(0,0,0);
+    border-radius: 5px;
   }
   // make comments' bg not opaque or it's hard to see the selection
-  .comment {
-    background-color: rgba(41, 46, 52, .5)
+  .syntax--comment {
+    background-color: hsl(216, 6%, 13%);
   }
   .line-number.cursor-line {
     background-color: rgba(255,0,0,.6);
@@ -45,11 +41,32 @@ atom-text-editor::shadow {
     font-weight: normal;
   }
 
-  // highlight stuff in red :)
-  .quick-highlight.box-selection .region {
-    border-radius: 0;
-    border-color: red;
+
+  @keyframes b_and_w {
+    from, 70% { border-color: white; }
+    to { border-color: gray; }
   }
+
+  // highlight fix
+  .quick-highlight.box-selection .region {
+    animation: 1s b_and_w linear infinite;
+
+    background-color: transparent;
+    border-width: 2px;
+    // above a comment background
+    z-index: 1;
+  }
+
+  .quick-highlight .region {
+    // border-top-width: 2px;
+    // border-bottom-width: 2px;
+    // border-radius: 5px;
+  }
+
+  .minimap .mini-quick-hl.box-selection {
+    background-color: rgb(255,255,255);
+  }
+
 
 }
 
@@ -94,11 +111,6 @@ body atom-text-editor {
   }
 }
 
-// use transparency to avoid hiding the linter's underlining
-atom-text-editor::shadow .cursor-line {
-  background-color: rgba(0,0,0,0.4);
-}
-
 // seems to be a thing on Unity Dark UI - put back git status text colors
 .tree-view {
   .file, .directory.collapsed {
@@ -117,11 +129,12 @@ atom-text-editor::shadow .cursor-line {
 // BIGGER Vim mode indication
 .status-bar-vim-mode-plus-normal,
 .status-bar-vim-mode-plus-insert,
-.status-bar-vim-mode-plus-visual {
+.status-bar-vim-mode-plus-visual,
+.status-bar-vim-mode-plus-operator-pending {
   font-weight: bold;
   text-align: center;
   font-size: 1.5em;
-  width: 18rem;
+  width: 15rem;
   text-transform: uppercase;
 }
 
@@ -129,20 +142,21 @@ atom-text-editor::shadow .cursor-line {
   background: rgb(105, 238, 103);
   color: rgb(4, 111, 11);
 }
-
 .status-bar-vim-mode-plus-insert {
   background: rgb(7, 193, 242);
   color: white;
 }
-
 .status-bar-vim-mode-plus-visual {
   background: rgb(255, 206, 98);
   color: rgb(168, 117, 5);
 }
+.status-bar-vim-mode-plus-operator-pending {
+  background: rgb(242, 130, 130);
+  color: red;
+}
 
 // minimap
-atom-text-editor atom-text-editor-minimap::shadow .minimap-visible-area::after,
-atom-text-editor::shadow atom-text-editor-minimap::shadow .minimap-visible-area::after {
-  background-color: rgba(0, 0, 0, 0.2);
-  border-right: 1px solid white;
+atom-text-editor atom-text-editor-minimap .minimap-visible-area::after {
+  background-color: rgba(0, 200, 255, 0.2);
+  // border-left: 1px solid rgb(0, 255, 255);
 }

@@ -59,7 +59,7 @@ plugins=(osx fasd)
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 export SVN_EDITOR=vim
 export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_51.jdk/Contents/Home
-export ANDROID_HOME=/usr/local/opt/android-sdk
+export ANDROID_HOME=~/Library/Android/sdk
 export SPRING_OUTPUT_ANSI_ENABLED=ALWAYS
 # export MANPATH="/usr/local/man:$MANPATH"
 
@@ -128,10 +128,18 @@ alias grep='grep --color'
 alias t='tig status'
 # renew dhcp
 alias renewdhcp='sudo ipconfig set en0 BOOTP && sudo ipconfig set en0 DHCP'
+# NVM
 export NVM_DIR="/Users/greg/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+# Elmenv
 export PATH="$HOME/.elmenv/bin:$PATH"
 eval "$(elmenv init -)"
+# Go
 export GOPATH="$HOME/gocode"
 export PATH="$GOPATH/bin:$PATH"
+# Yarn global packages
+export PATH="$HOME/.yarn/bin:$PATH"
 export PATH="$PATH:$(yarn global bin)"
+# Android
+export PATH=${PATH}:${ANDROID_HOME}/tools
+export PATH=${PATH}:${ANDROID_HOME}/platform-tools

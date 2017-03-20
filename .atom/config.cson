@@ -59,7 +59,7 @@
     telemetryConsent: "limited"
     themes: [
       "unity-dark-ui"
-      "spacemacs-dark-syntax"
+      "atom-material-syntax-dark"
     ]
   "cursor-history":
     flashOnLand: true
@@ -67,7 +67,6 @@
   editor:
     backUpBeforeSaving: true
     invisibles: {}
-    preferredLineLength: 120
     tabType: "soft"
   "elm-format":
     showNotifications: true
@@ -89,6 +88,12 @@
     currentPanelHeight: "30.86092715231788vh"
   gofmt: {}
   "ide-flow": {}
+  "js-hyperclick":
+    extensions: [
+      ".js"
+      ".json"
+      ".jsx"
+    ]
   jumpy: {}
   "language-babel":
     babelMapsPath: "./babelled/"
@@ -99,13 +104,13 @@
   linter:
     errorPanelHeight: 116
     gutterPosition: "Left"
-    showErrorPanel: false
-  "linter-eslint":
-    fixOnSave: true
+  "linter-eslint": {}
   "linter-flow":
     testRuleTwo: true
   "linter-jshint":
     disableWhenNoJshintrcFileInPath: true
+  "linter-ui-default": {}
+  "markdown-preview": {}
   "merge-conflicts": {}
   minimap:
     absoluteMode: true
@@ -127,6 +132,7 @@
   "one-dark-ui": {}
   "quick-highlight":
     countDisplayStyles: "badge badge-error icon icon-light-bulb"
+    decorate: "box"
   "run-command2": {}
   "selection-highlight":
     highlightBackground: true
