@@ -61,11 +61,14 @@
       "unity-dark-ui"
       "atom-material-syntax-dark"
     ]
+    warnOnLargeFileLimit: 5
   "cursor-history":
     flashOnLand: true
   docblockr: {}
   editor:
     backUpBeforeSaving: true
+    fontFamily: "Input"
+    fontSize: 13
     invisibles: {}
     tabType: "soft"
   "elm-format":
@@ -101,15 +104,15 @@
   "language-elm":
     autocompleteEnabled: false
     elmOraclePath: "/usr/local/bin/elm-oracle"
-  linter:
-    errorPanelHeight: 116
-    gutterPosition: "Left"
+  linter: {}
   "linter-eslint": {}
   "linter-flow":
     testRuleTwo: true
   "linter-jshint":
     disableWhenNoJshintrcFileInPath: true
-  "linter-ui-default": {}
+  "linter-ui-default":
+    decorateOnTreeView: "Files and Directories"
+    panelRepresents: "Entire Project"
   "markdown-preview": {}
   "merge-conflicts": {}
   minimap:
@@ -130,9 +133,12 @@
       showHome: false
   "nuclide-flow": {}
   "one-dark-ui": {}
+  pigments:
+    markerType: "native-square-dot"
   "quick-highlight":
     countDisplayStyles: "badge badge-error icon icon-light-bulb"
     decorate: "box"
+    highlightSelection: false
   "run-command2": {}
   "selection-highlight":
     highlightBackground: true
@@ -141,16 +147,17 @@
     iconsPlus: true
     noColor: true
   "split-diff":
+    diffWords: true
     ignoreWhitespace: true
     leftEditorColor: "red"
     rightEditorColor: "green"
+    scrollSyncType: "Vertical + Horizontal"
     syncHorizontalScroll: true
   "status-bar": {}
   tabs:
     enableVcsColoring: true
   "tree-view":
     autoReveal: true
-    hideVcsIgnoredFiles: true
     squashDirectoryNames: true
   "tree-view-git-status": {}
   "unity-dark-ui":
@@ -163,13 +170,18 @@
     useClipboardAsDefaultRegister: true
     wrapLeftRightMotion: true
   "vim-mode-plus":
+    automaticallyEscapeInsertModeOnActivePaneItemChange: true
     charactersToAddSpaceOnSurround: [
       "{"
       "}"
     ]
+    clearHighlightSearchOnResetNormalMode: true
+    flashOnMoveToOccurrence: true
     highlightSearch: true
     ignoreCaseForSearch: true
-    statusBarModeStringStyle: "long"
+    showHoverSearchCounterDuration: 500
+    smoothScrollOnHalfScrollMotion: true
+    smoothScrollOnHalfScrollMotionDuration: 200
     useClipboardAsDefaultRegister: true
     useSmartcaseForSearch: true
   "vim-mode-plus-move-selected-text": {}

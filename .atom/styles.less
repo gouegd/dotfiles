@@ -22,49 +22,67 @@ atom-panel .tree-view {
   background-color: hsl(216, 6%, 10%);
 }
 
+
+@linecolor: rgb(103, 106, 218);
+
+// line focused
+atom-text-editor {
+  line-height: 1.4;
+}
+atom-text-editor .line.cursor-line,
+atom-text-editor.is-focused .line.cursor-line {
+    background-color: @linecolor;
+
+    &>.syntax--source {
+      background-color: black;
+
+      .leading-whitespace {
+        background-color: @linecolor;
+      }
+    }
+}
+
 atom-text-editor.editor {
   .cursor {
-    border-color: red;
-    border-width: 2px;
+    border-color: white;
   }
   .selection .region {
-    background-color: rgb(0,0,0);
-    border-radius: 5px;
+    background-color: rgb(80, 80, 80);
   }
-  // make comments' bg not opaque or it's hard to see the selection
+  // Comments get a different font, but stay aligned
   .syntax--comment {
-    background-color: hsl(216, 6%, 13%);
-  }
-  .line-number.cursor-line {
-    background-color: rgba(255,0,0,.6);
-    color: #888;
-    font-weight: normal;
-  }
+    color: white !important;
 
-
-  @keyframes b_and_w {
-    from, 70% { border-color: white; }
-    to { border-color: gray; }
+    &:not(.syntax--punctuation){
+      font-family: Merienda !important;
+    }
+  }
+  .line-number {
+    color: #555;
+    &.cursor-line {
+      background-color: @linecolor;
+      color: #ccc;
+      font-weight: normal;
+    }
   }
 
   // highlight fix
   .quick-highlight.box-selection .region {
-    animation: 1s b_and_w linear infinite;
-
     background-color: transparent;
-    border-width: 2px;
+    border-width: 1px;
+    border-color: yellow;
+
     // above a comment background
     z-index: 1;
   }
 
   .quick-highlight .region {
-    // border-top-width: 2px;
-    // border-bottom-width: 2px;
-    // border-radius: 5px;
+    // above a comment background
+    z-index: 1;
   }
 
   .minimap .mini-quick-hl.box-selection {
-    background-color: rgb(255,255,255);
+    background-color: yellow;
   }
 
 
@@ -74,12 +92,8 @@ atom-text-editor.editor {
 
 // la branche git devrait ressortir un peu du reste en bleu
 .git-branch {
-  color: #55f;
-}
-
-// fonte Input dans l'éditeur de texte
-body atom-text-editor {
-  font-family: "Input", "Helvetica Neue", Helvetica, monospace !important
+  background-color: #55f;
+  color: white;
 }
 
 // les tabs sont moches avec le style inspiré de OSX.
@@ -134,7 +148,7 @@ body atom-text-editor {
   font-weight: bold;
   text-align: center;
   font-size: 1.5em;
-  width: 15rem;
+  width: 10rem;
   text-transform: uppercase;
 }
 
@@ -159,4 +173,74 @@ body atom-text-editor {
 atom-text-editor atom-text-editor-minimap .minimap-visible-area::after {
   background-color: rgba(0, 200, 255, 0.2);
   // border-left: 1px solid rgb(0, 255, 255);
+}
+
+// linter and tree-view
+.tree-view {
+  .linter-error,
+  .linter-warning {
+    top: 0;
+    left: -1rem;
+    width: .5rem;
+    height: 100%;
+    position: absolute;
+    background: red;
+    border: none;
+  }
+
+  .linter-warning {
+    background: yellow;
+  }
+}
+
+.tool-panel .syntax--text {
+  color: black;
+}
+
+// Vim cursor
+.cursor-base () {
+  border: none;
+  background: none;
+  opacity: 1;
+}
+
+.block-cursor(@bgcolor) {
+  .cursor-base();
+  background-color: @bgcolor;
+  border-bottom: .2em solid white;
+}
+.underline-cursor(@visibility) {
+  .cursor-base();
+  border-bottom: .3em solid white;
+  visibility: @visibility;
+}
+atom-text-editor.vim-mode-plus.normal-mode,
+atom-text-editor.vim-mode-plus.visual-mode,
+{
+  &.is-focused {
+    .cursor {
+      .block-cursor(rgba(255,255,255,.4));
+    }
+    .cursors.blink-off .cursor {
+      .block-cursor(inherit);
+    }
+  }
+}
+atom-text-editor.vim-mode-plus.insert-mode.replace,
+{
+  &.is-focused {
+    .cursor {
+      .underline-cursor(visible);
+    }
+    .cursors.blink-off .cursor {
+      .underline-cursor(hidden);
+    }
+  }
+}
+// Vim search/star highlight
+atom-text-editor .vim-mode-plus-highlight-search .region {
+    border-radius: 0;
+    border: 2px dotted white;
+    background-color: inherit;
+    z-index: 1;
 }
