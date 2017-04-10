@@ -57,7 +57,6 @@ plugins=(osx fasd)
 # User configuration
 
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
-export SVN_EDITOR=vim
 export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_51.jdk/Contents/Home
 export ANDROID_HOME=~/Library/Android/sdk
 export SPRING_OUTPUT_ANSI_ENABLED=ALWAYS
@@ -109,7 +108,7 @@ alias mount='mount |column -t'
 #
 alias h='history'
 alias path='echo -e ${PATH//:/\\n}'
-alias vi=vim
+alias vi=nvim
 alias ports='netstat -tulanp'
 alias su='sudo -i'
 alias reboot='sudo /sbin/reboot'
@@ -126,8 +125,6 @@ alias pstree='pstree -G'
 alias json='python -m json.tool | pygmentize -l json'
 alias grep='grep --color'
 alias t='tig status'
-# renew dhcp
-alias renewdhcp='sudo ipconfig set en0 BOOTP && sudo ipconfig set en0 DHCP'
 # NVM
 export NVM_DIR="/Users/greg/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -143,3 +140,4 @@ export PATH="$PATH:$(yarn global bin)"
 # Android
 export PATH=${PATH}:${ANDROID_HOME}/tools
 export PATH=${PATH}:${ANDROID_HOME}/platform-tools
+
