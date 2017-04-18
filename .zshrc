@@ -134,6 +134,8 @@ eval "$(elmenv init -)"
 # Go
 export GOPATH="$HOME/gocode"
 export PATH="$GOPATH/bin:$PATH"
+# Node
+export PATH="/usr/local/opt/node@6/bin:$PATH"
 # Yarn global packages
 export PATH="$HOME/.yarn/bin:$PATH"
 export PATH="$PATH:$(yarn global bin)"

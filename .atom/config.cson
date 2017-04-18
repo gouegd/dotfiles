@@ -15,6 +15,8 @@
   "atom-ternjs": {}
   "autocomplete-plus":
     backspaceTriggersAutocomplete: true
+  "autohide-tree-view":
+    showDelay: 10
   "bracket-matcher":
     autocompleteBrackets: false
     autocompleteSmartQuotes: false
@@ -50,7 +52,7 @@
       "tester-go"
       "navigator-go"
       "elmjutsu"
-      "tree-view-git-modified"
+      "pigments"
     ]
     packagesWithKeymapsDisabled: [
       "elm-format"
@@ -59,7 +61,7 @@
     telemetryConsent: "limited"
     themes: [
       "unity-dark-ui"
-      "atom-material-syntax-dark"
+      "atom-dark-fusion-syntax"
     ]
     warnOnLargeFileLimit: 5
   "cursor-history":
@@ -68,7 +70,6 @@
   editor:
     backUpBeforeSaving: true
     fontFamily: "Input"
-    fontSize: 13
     invisibles: {}
     tabType: "soft"
   "elm-format":
@@ -113,6 +114,7 @@
   "linter-ui-default":
     decorateOnTreeView: "Files and Directories"
     panelRepresents: "Entire Project"
+    statusBarRepresents: "Entire Project"
   "markdown-preview": {}
   "merge-conflicts": {}
   minimap:
@@ -157,12 +159,13 @@
   tabs:
     enableVcsColoring: true
   "tree-view":
+    alwaysOpenExisting: true
     autoReveal: true
+    hideVcsIgnoredFiles: true
     squashDirectoryNames: true
   "tree-view-git-status": {}
   "unity-dark-ui":
     colorStatusIndicatorsInTreeView: true
-    showIcons: true
   "unity-ui":
     colorStatusIndicatorsInTreeView: true
     showIcons: true

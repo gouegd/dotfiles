@@ -9,12 +9,6 @@
  * http://lesscss.org
  */
 
-
-/*
- * Examples
- * (To see them, uncomment and save)
- */
-
 // style the background and foreground colors on the atom-text-editor-element itself
 atom-text-editor,
 atom-text-editor .gutter,
@@ -23,7 +17,8 @@ atom-panel .tree-view {
 }
 
 
-@linecolor: rgb(103, 106, 218);
+// @linecolor: rgb(103, 106, 218);
+@linecolor: rgb(50, 50, 50);
 
 // line focused
 atom-text-editor {
@@ -44,7 +39,7 @@ atom-text-editor.is-focused .line.cursor-line {
 
 atom-text-editor.editor {
   .cursor {
-    border-color: white;
+    border-color: #ddd;
   }
   .selection .region {
     background-color: rgb(80, 80, 80);
@@ -53,8 +48,14 @@ atom-text-editor.editor {
   .syntax--comment {
     color: white !important;
 
-    &:not(.syntax--punctuation){
-      font-family: Merienda !important;
+    &:not(.syntax--punctuation) {
+      font-family: 'Architects Daughter' !important;
+      letter-spacing: .07em;
+
+      .leading-whitespace {
+        font-family: Input;
+        letter-spacing: normal;
+      }
     }
   }
   .line-number {
@@ -92,8 +93,7 @@ atom-text-editor.editor {
 
 // la branche git devrait ressortir un peu du reste en bleu
 .git-branch {
-  background-color: #55f;
-  color: white;
+  color: #77f;
 }
 
 // les tabs sont moches avec le style inspiré de OSX.
@@ -126,15 +126,22 @@ atom-text-editor.editor {
 }
 
 // seems to be a thing on Unity Dark UI - put back git status text colors
-.tree-view {
-  .file, .directory.collapsed {
-    &.status-added {
-      color: #6dcc50;
+atom-panel {
+  .tree-view,
+  .tree-view:focus, {
+    .file, .directory.collapsed {
+      &.status-added {
+        color: #6dcc50;
+      }
     }
-  }
-  .file, .directory.collapsed {
-    &.status-modified {
-      color: #f9a646;
+    .file, .directory.collapsed {
+      &.status-modified {
+        color: #f9a646;
+      }
+    }
+
+    .selected::before {
+      background-color: @linecolor;
     }
   }
 }
@@ -145,34 +152,14 @@ atom-text-editor.editor {
 .status-bar-vim-mode-plus-insert,
 .status-bar-vim-mode-plus-visual,
 .status-bar-vim-mode-plus-operator-pending {
-  font-weight: bold;
   text-align: center;
   font-size: 1.5em;
-  width: 10rem;
-  text-transform: uppercase;
-}
-
-.status-bar-vim-mode-plus-normal {
-  background: rgb(105, 238, 103);
-  color: rgb(4, 111, 11);
-}
-.status-bar-vim-mode-plus-insert {
-  background: rgb(7, 193, 242);
-  color: white;
-}
-.status-bar-vim-mode-plus-visual {
-  background: rgb(255, 206, 98);
-  color: rgb(168, 117, 5);
-}
-.status-bar-vim-mode-plus-operator-pending {
-  background: rgb(242, 130, 130);
-  color: red;
+  width: 2rem;
 }
 
 // minimap
 atom-text-editor atom-text-editor-minimap .minimap-visible-area::after {
-  background-color: rgba(0, 200, 255, 0.2);
-  // border-left: 1px solid rgb(0, 255, 255);
+  background-color: rgba(80, 80, 80, 0.7);
 }
 
 // linter and tree-view
@@ -180,8 +167,8 @@ atom-text-editor atom-text-editor-minimap .minimap-visible-area::after {
   .linter-error,
   .linter-warning {
     top: 0;
-    left: -1rem;
-    width: .5rem;
+    left: -1.5rem;
+    width: 1rem;
     height: 100%;
     position: absolute;
     background: red;
@@ -243,4 +230,28 @@ atom-text-editor .vim-mode-plus-highlight-search .region {
     border: 2px dotted white;
     background-color: inherit;
     z-index: 1;
+}
+
+// linter
+.linter-status-count {
+  .highlight,
+  .highlight-warning,
+  .highlight-error {
+    background-color: transparent;
+  }
+  .highlight-error {
+    color: red;
+    border: 1px solid red;
+  }
+  .highlight-warning {
+    color: orange;
+    border: 1px solid orange;
+  }
+}
+
+
+// Hide United Dark theme file icons
+.unity-ui-show-icons .list-group .icon:before,
+.unity-ui-show-icons .list-tree .icon:before {
+  display: none;
 }
