@@ -60,9 +60,10 @@
     ]
     telemetryConsent: "limited"
     themes: [
-      "unity-dark-ui"
+      "isotope-ui"
       "atom-dark-fusion-syntax"
     ]
+    titleBar: "custom"
     warnOnLargeFileLimit: 5
   "cursor-history":
     flashOnLand: true
@@ -92,6 +93,10 @@
     currentPanelHeight: "30.86092715231788vh"
   gofmt: {}
   "ide-flow": {}
+  "isotope-ui":
+    fontFamily: "Cantarell"
+    minimalMode: true
+    tabSizing: "Minimum"
   "js-hyperclick":
     extensions: [
       ".js"
@@ -130,6 +135,7 @@
       "split-diff": true
       "split-diffDecorationsZIndex": 0
   "minimap-linter": {}
+  "no-title-bar": {}
   nuclide:
     "nuclide-home":
       showHome: false
@@ -148,6 +154,12 @@
   "seti-icons":
     iconsPlus: true
     noColor: true
+  "seti-ui":
+    compactView: true
+    disableAnimations: true
+    fileIcons: false
+    hideProjectTab: true
+    themeColor: "Purple"
   "split-diff":
     diffWords: true
     ignoreWhitespace: true
@@ -157,6 +169,7 @@
     syncHorizontalScroll: true
   "status-bar": {}
   tabs:
+    addNewTabsAtEnd: true
     enableVcsColoring: true
   "tree-view":
     alwaysOpenExisting: true

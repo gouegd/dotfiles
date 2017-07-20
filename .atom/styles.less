@@ -10,20 +10,13 @@
  */
 
 // style the background and foreground colors on the atom-text-editor-element itself
-atom-text-editor,
-atom-text-editor .gutter,
-atom-panel .tree-view {
-  background-color: hsl(216, 6%, 10%);
-}
-
-
-// @linecolor: rgb(103, 106, 218);
-@linecolor: rgb(50, 50, 50);
-
-// line focused
 atom-text-editor {
-  line-height: 1.4;
+  background-color: hsl(216, 30%, 12%);
 }
+
+
+@linecolor: rgb(50, 50, 50);
+// line focused
 atom-text-editor .line.cursor-line,
 atom-text-editor.is-focused .line.cursor-line {
     background-color: @linecolor;
@@ -38,112 +31,48 @@ atom-text-editor.is-focused .line.cursor-line {
 }
 
 atom-text-editor.editor {
-  .cursor {
-    border-color: #ddd;
-  }
-  .selection .region {
-    background-color: rgb(80, 80, 80);
-  }
   // Comments get a different font,. but stay aligned
-  .syntax--comment {
-    color: #777 !important;
-
-    &:not(.syntax--punctuation) {
-      font-family: 'NovaMono', monospace !important;
-
-      // .leading-whitespace {
-      //   font-family: monospace;
-      // }
-    }
-  }
-  .line-number {
-    color: #555;
-    &.cursor-line {
-      background-color: @linecolor;
-      color: #ccc;
-      font-weight: normal;
-    }
+  // .syntax--comment {
+  //   color: #777 !important;
+  //
+  //   &:not(.syntax--punctuation) {
+  //     font-family: 'NovaMono', monospace !important;
+  //   }
+  // }
+  .line-number.cursor-line {
+    // background-color: @linecolor;
+    color: #ccc;
   }
 
   // highlight fix
-  .quick-highlight.box-selection .region {
-    background-color: transparent;
-    border-width: 1px;
-    border-color: yellow;
 
-    // above a comment background
-    z-index: 1;
-  }
+  // .quick-highlight.box-selection .region {
+  //   background-color: transparent;
+  //   border-width: 1px;
+  //   border-color: yellow;
+  //
+  //   // above a comment background
+  //   z-index: 1;
+  // }
+  //
+  // .minimap .mini-quick-hl.box-selection {
+  //   background-color: yellow;
+  // }
 
   .quick-highlight .region {
     // above a comment background
     z-index: 1;
   }
 
-  .minimap .mini-quick-hl.box-selection {
-    background-color: yellow;
-  }
-
-
 }
 
-
-
-// la branche git devrait ressortir un peu du reste en bleu
-.git-branch {
+// la branche git ressort un peu du reste en bleu
+.github-branch {
   color: #77f;
-}
-
-// les tabs sont moches avec le style inspiré de OSX.
-.tab-bar {
-  border: none;
-}
-.tab {
-  background: #555 !important;
-  border: none !important;
 }
 .tab.active {
   background: #66d !important;
-  font-weight: bolder;
 }
-.tab-bar .tab .close-icon {
-  color: white !important;
-}
-.tab > .title:not([class*="status"]) {
-  color: #ddd;
-}
-
- // en theme dark c'est invisible
-.theme-unity-dark-ui {
-  .status-bar a {
-    color: #888;
-  }
-  linter-bottom-tab.active {
-    background-color: #888;
-  }
-}
-
-// seems to be a thing on Unity Dark UI - put back git status text colors
-atom-panel {
-  .tree-view,
-  .tree-view:focus, {
-    .file, .directory.collapsed {
-      &.status-added {
-        color: #6dcc50;
-      }
-    }
-    .file, .directory.collapsed {
-      &.status-modified {
-        color: #f9a646;
-      }
-    }
-
-    .selected::before {
-      background-color: @linecolor;
-    }
-  }
-}
-
 
 // BIGGER Vim mode indication
 .status-bar-vim-mode-plus-normal,
@@ -156,21 +85,22 @@ atom-panel {
 }
 
 // minimap
-atom-text-editor atom-text-editor-minimap .minimap-visible-area::after {
-  background-color: rgba(80, 80, 80, 0.7);
-}
+// atom-text-editor atom-text-editor-minimap .minimap-visible-area::after {
+//   background-color: rgba(80, 80, 80, 0.7);
+// }
 
 // linter and tree-view
 .tree-view {
   .linter-error,
   .linter-warning {
     top: 0;
-    left: -1.5rem;
-    width: 1rem;
+    left: -1.9rem;
+    width: 1.2rem;
     height: 100%;
     position: absolute;
     background: red;
     border: none;
+    border-radius: 50%;
   }
 
   .linter-warning {
@@ -178,9 +108,9 @@ atom-text-editor atom-text-editor-minimap .minimap-visible-area::after {
   }
 }
 
-.tool-panel .syntax--text {
-  color: black;
-}
+// .tool-panel .syntax--text {
+//   color: black;
+// }
 
 // Vim cursor
 .cursor-base () {
@@ -199,26 +129,26 @@ atom-text-editor atom-text-editor-minimap .minimap-visible-area::after {
   border-bottom: .3em solid white;
   visibility: @visibility;
 }
-atom-text-editor.vim-mode-plus.normal-mode,
-atom-text-editor.vim-mode-plus.visual-mode,
-{
-  &.is-focused {
-    .cursor {
-      .block-cursor(rgba(255,255,255,.4));
-    }
-    .cursors.blink-off .cursor {
-      .block-cursor(inherit);
+atom-text-editor.vim-mode-plus {
+  &.normal-mode,.visual-mode {
+    &.is-focused {
+      .cursor {
+        .block-cursor(rgba(255,255,255,.4));
+      }
+      .cursors.blink-off .cursor {
+        .block-cursor(inherit);
+      }
     }
   }
-}
-atom-text-editor.vim-mode-plus.insert-mode.replace,
-{
-  &.is-focused {
-    .cursor {
-      .underline-cursor(visible);
-    }
-    .cursors.blink-off .cursor {
-      .underline-cursor(hidden);
+
+  &.insert-mode.replace {
+    &.is-focused {
+      .cursor {
+        .underline-cursor(visible);
+      }
+      .cursors.blink-off .cursor {
+        .underline-cursor(hidden);
+      }
     }
   }
 }
@@ -228,18 +158,4 @@ atom-text-editor .vim-mode-plus-highlight-search .region {
     border: 1px solid rgb(192, 82, 244);
     background-color: inherit;
     z-index: 1;
-}
-
-// linter
-.linter-status-count {
-  .text-error > span {
-    color: red;
-  }
-}
-
-
-// Hide United Dark theme file icons
-.unity-ui-show-icons .list-group .icon:before,
-.unity-ui-show-icons .list-tree .icon:before {
-  display: none;
 }
