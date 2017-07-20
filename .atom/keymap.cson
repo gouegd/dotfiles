@@ -45,9 +45,11 @@
   'ctrl-w F': 'open-this:split-right'
   ':': 'vim-mode-plus-ex-mode:open'
   '!': 'vim-mode-plus-ex-mode:toggle-setting'
+  # ESLint autofix
+  'g l': 'linter-eslint:fix-file'
 
 # quick-highlight
-'atom-text-editor.vim-mode-plus.normal-mode, atom-text-editor.vim-mode-plus.visual-mode':
+'atom-text-editor.vim-mode-plus.normal-mode,atom-text-editor.vim-mode-plus.visual-mode':
   'space m': 'quick-highlight:toggle'
   'space M': 'quick-highlight:clear'
   'g m': 'vim-mode-plus-user:quick-highlight'

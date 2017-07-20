@@ -44,18 +44,16 @@ atom-text-editor.editor {
   .selection .region {
     background-color: rgb(80, 80, 80);
   }
-  // Comments get a different font, but stay aligned
+  // Comments get a different font,. but stay aligned
   .syntax--comment {
-    color: white !important;
+    color: #777 !important;
 
     &:not(.syntax--punctuation) {
-      font-family: 'Architects Daughter' !important;
-      letter-spacing: .07em;
+      font-family: 'NovaMono', monospace !important;
 
-      .leading-whitespace {
-        font-family: Input;
-        letter-spacing: normal;
-      }
+      // .leading-whitespace {
+      //   font-family: monospace;
+      // }
     }
   }
   .line-number {
@@ -227,25 +225,15 @@ atom-text-editor.vim-mode-plus.insert-mode.replace,
 // Vim search/star highlight
 atom-text-editor .vim-mode-plus-highlight-search .region {
     border-radius: 0;
-    border: 2px dotted white;
+    border: 1px solid rgb(192, 82, 244);
     background-color: inherit;
     z-index: 1;
 }
 
 // linter
 .linter-status-count {
-  .highlight,
-  .highlight-warning,
-  .highlight-error {
-    background-color: transparent;
-  }
-  .highlight-error {
+  .text-error > span {
     color: red;
-    border: 1px solid red;
-  }
-  .highlight-warning {
-    color: orange;
-    border: 1px solid orange;
   }
 }
 

@@ -161,7 +161,7 @@
   "tree-view":
     alwaysOpenExisting: true
     autoReveal: true
-    hideVcsIgnoredFiles: true
+    focusOnReveal: false
     squashDirectoryNames: true
   "tree-view-git-status": {}
   "unity-dark-ui":
@@ -187,6 +187,8 @@
     smoothScrollOnHalfScrollMotionDuration: 200
     useClipboardAsDefaultRegister: true
     useSmartcaseForSearch: true
+  "vim-mode-plus-ex-mode":
+    notifiedUseExMode: true
   "vim-mode-plus-move-selected-text": {}
   "vim-surround": {}
   "webbox-color": {}
