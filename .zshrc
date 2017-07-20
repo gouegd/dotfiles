@@ -125,6 +125,7 @@ alias pstree='pstree -G'
 alias json='python -m json.tool | pygmentize -l json'
 alias grep='grep --color'
 alias t='tig status'
+alias atom='open -a ''Atom'''
 # NVM
 export NVM_DIR="/Users/greg/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -136,10 +137,8 @@ export GOPATH="$HOME/gocode"
 export PATH="$GOPATH/bin:$PATH"
 # Node
 export PATH="/usr/local/opt/node@6/bin:$PATH"
-# Yarn global packages
-export PATH="$HOME/.yarn/bin:$PATH"
-export PATH="$PATH:$(yarn global bin)"
+# Yarn
+export PATH="$PATH:$HOME/.yarn/bin"
 # Android
 export PATH=${PATH}:${ANDROID_HOME}/tools
 export PATH=${PATH}:${ANDROID_HOME}/platform-tools
-
