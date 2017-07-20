@@ -9,8 +9,9 @@
  * http://lesscss.org
  */
 
-// style the background and foreground colors on the atom-text-editor-element itself
-atom-text-editor {
+// style the editor and treeview
+atom-text-editor,
+.tool-panel.tool-panel {
   background-color: hsl(216, 30%, 12%);
 }
 
@@ -96,7 +97,7 @@ atom-text-editor.editor {
     top: 0;
     left: -1.9rem;
     width: 1.2rem;
-    height: 100%;
+    height: 1.2rem;
     position: absolute;
     background: red;
     border: none;
@@ -107,10 +108,6 @@ atom-text-editor.editor {
     background: yellow;
   }
 }
-
-// .tool-panel .syntax--text {
-//   color: black;
-// }
 
 // Vim cursor
 .cursor-base () {
@@ -158,4 +155,22 @@ atom-text-editor .vim-mode-plus-highlight-search .region {
     border: 1px solid rgb(192, 82, 244);
     background-color: inherit;
     z-index: 1;
+}
+
+// Fix invisble linter highlight on current line
+atom-text-editor.editor .linter-highlight .region {
+  z-index: 1;
+}
+
+// Hide ugly useless linter gutter
+.gutter[gutter-name="linter-ui-default"] {
+  display: none;
+}
+// Reduce gutter size
+atom-text-editor .gutter.git-diff-icon .line-number {
+  padding-left: 0;
+}
+// Remove useless 'project' tab
+.list-inline.tab-bar.inset-panel[location="left"] {
+  display: none;
 }

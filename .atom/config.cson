@@ -119,7 +119,9 @@
   "linter-ui-default":
     decorateOnTreeView: "Files and Directories"
     panelRepresents: "Entire Project"
+    showPanel: true
     statusBarRepresents: "Entire Project"
+    tooltipFollows: "Mouse"
   "markdown-preview": {}
   "merge-conflicts": {}
   minimap:
