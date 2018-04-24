@@ -135,10 +135,8 @@ eval "$(elmenv init -)"
 # Go
 export GOPATH="$HOME/gocode"
 export PATH="$GOPATH/bin:$PATH"
-# Node
-export PATH="/usr/local/opt/node@6/bin:$PATH"
-# Yarn
-export PATH="$PATH:$HOME/.yarn/bin"
+# yarn
+export PATH="$PATH:`yarn global bin`"
 # Android
 export PATH=${PATH}:${ANDROID_HOME}/tools
 export PATH=${PATH}:${ANDROID_HOME}/platform-tools
