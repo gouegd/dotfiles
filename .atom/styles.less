@@ -9,24 +9,25 @@
  * http://lesscss.org
  */
 
+@bgcolor: hsl(216, 30%, 12%);
+@hlcolor: #3e4451;
+
 // style the editor and treeview
 atom-text-editor,
 .tool-panel.tool-panel {
-  background-color: hsl(216, 30%, 12%);
+  background-color: @bgcolor;
 }
 
-
-@linecolor: rgb(50, 50, 50);
 // line focused
 atom-text-editor .line.cursor-line,
 atom-text-editor.is-focused .line.cursor-line {
-    background-color: @linecolor;
+    background-color: @hlcolor;
 
     &>.syntax--source {
       background-color: black;
 
       .leading-whitespace {
-        background-color: @linecolor;
+        background-color: @hlcolor;
       }
     }
 }
@@ -41,7 +42,7 @@ atom-text-editor.editor {
   //   }
   // }
   .line-number.cursor-line {
-    // background-color: @linecolor;
+    // background-color: @hlcolor;
     color: #ccc;
   }
 
@@ -71,9 +72,16 @@ atom-text-editor.editor {
 .github-branch {
   color: #77f;
 }
-.tab.active {
-  background: #66d !important;
+
+// tab backgrounds
+atom-pane .tab-bar {
+  background: @bgcolor;
+
+  .tab.active {
+    background: @hlcolor;
+  }
 }
+
 
 // BIGGER Vim mode indication
 .status-bar-vim-mode-plus-normal,
@@ -173,4 +181,13 @@ atom-text-editor .gutter.git-diff-icon .line-number {
 // Remove useless 'project' tab
 .list-inline.tab-bar.inset-panel[location="left"] {
   display: none;
+}
+// Make tab close icon always a bit visible
+atom-pane .tab-bar .tab .close-icon {
+  opacity: .5;
+}
+
+// Reduce the left padding used for the file tree
+.list-tree li {
+  padding-left: .8rem !important;
 }

@@ -3,6 +3,12 @@
     general:
       _analyticsUserId: "a5944747-9303-4244-a57b-f873315457b7"
     go: {}
+  "atom-ide-ui":
+    "atom-ide-code-format":
+      formatOnSave: true
+      formatOnType: false
+    "atom-ide-diagnostics-ui":
+      useExperimentalUi: true
   "atom-material-ui":
     compactTreeView: true
     disableAnimations: true
@@ -53,6 +59,9 @@
       "navigator-go"
       "elmjutsu"
       "pigments"
+      "elm-format"
+      "linter-elm-make"
+      "linter"
     ]
     packagesWithKeymapsDisabled: [
       "elm-format"
@@ -119,7 +128,6 @@
   "linter-ui-default":
     decorateOnTreeView: "Files and Directories"
     panelRepresents: "Entire Project"
-    showPanel: true
     statusBarRepresents: "Entire Project"
     tooltipFollows: "Mouse"
   "markdown-preview": {}
@@ -134,7 +142,7 @@
       linterDecorationsZIndex: 0
       "minimap-quick-highlight": true
       "minimap-quick-highlightDecorationsZIndex": 0
-      "split-diff": true
+      "split-diff": false
       "split-diffDecorationsZIndex": 0
   "minimap-linter": {}
   "no-title-bar": {}
@@ -146,7 +154,7 @@
   pigments:
     markerType: "native-square-dot"
   "quick-highlight":
-    countDisplayStyles: "badge badge-error icon icon-light-bulb"
+    countDisplayStyles: "badge badge-success icon-light-bulb"
     decorate: "box"
     highlightSelection: false
   "run-command2": {}
@@ -175,7 +183,6 @@
     enableVcsColoring: true
   "tree-view":
     alwaysOpenExisting: true
-    autoReveal: true
     focusOnReveal: false
     squashDirectoryNames: true
   "tree-view-git-status": {}
@@ -197,6 +204,7 @@
     flashOnMoveToOccurrence: true
     highlightSearch: true
     ignoreCaseForSearch: true
+    notifiedCoffeeScriptNoLongerSupportedToExtendVMP: true
     showHoverSearchCounterDuration: 500
     smoothScrollOnHalfScrollMotion: true
     smoothScrollOnHalfScrollMotionDuration: 200
