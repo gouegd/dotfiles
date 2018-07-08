@@ -1,5 +1,5 @@
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/greg/.oh-my-zsh
+export ZSH=~/.oh-my-zsh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -108,7 +108,6 @@ alias mount='mount |column -t'
 #
 alias h='history'
 alias path='echo -e ${PATH//:/\\n}'
-alias vi=nvim
 alias ports='netstat -tulanp'
 alias su='sudo -i'
 alias reboot='sudo /sbin/reboot'
@@ -125,18 +124,18 @@ alias pstree='pstree -G'
 alias json='python -m json.tool | pygmentize -l json'
 alias grep='grep --color'
 alias t='tig status'
-alias atom='open -a ''Atom'''
 # NVM
-export NVM_DIR="/Users/greg/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 # Elmenv
-export PATH="$HOME/.elmenv/bin:$PATH"
-eval "$(elmenv init -)"
+#export PATH="$HOME/.elmenv/bin:$PATH"
+#eval "$(elmenv init -)"
 # Go
-export GOPATH="$HOME/gocode"
-export PATH="$GOPATH/bin:$PATH"
+#export GOPATH="$HOME/gocode"
+#export PATH="$GOPATH/bin:$PATH"
 # yarn
-export PATH="$PATH:`yarn global bin`"
+#export PATH="$PATH:`yarn global bin`"
 # Android
-export PATH=${PATH}:${ANDROID_HOME}/tools
-export PATH=${PATH}:${ANDROID_HOME}/platform-tools
+#export PATH=${PATH}:${ANDROID_HOME}/tools
+#export PATH=${PATH}:${ANDROID_HOME}/platform-tools

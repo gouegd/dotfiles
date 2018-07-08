@@ -49,4 +49,4 @@
 [rerere]
     enabled = true
 [core]
-	editor = nvim
+	editor = vim
