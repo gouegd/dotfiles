@@ -57,9 +57,9 @@ plugins=(osx fasd)
 # User configuration
 
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
-export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_51.jdk/Contents/Home
+# export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_51.jdk/Contents/Home
 export ANDROID_HOME=~/Library/Android/sdk
-export SPRING_OUTPUT_ANSI_ENABLED=ALWAYS
+# export SPRING_OUTPUT_ANSI_ENABLED=ALWAYS
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
@@ -124,6 +124,8 @@ alias pstree='pstree -G'
 alias json='python -m json.tool | pygmentize -l json'
 alias grep='grep --color'
 alias t='tig status'
+alias jira='fn() { open https://debitsuccess.atlassian.net/browse/CRMWEB-$1 };fn'
+
 # NVM
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -139,3 +141,15 @@ export NVM_DIR="$HOME/.nvm"
 # Android
 #export PATH=${PATH}:${ANDROID_HOME}/tools
 #export PATH=${PATH}:${ANDROID_HOME}/platform-tools
+# AWS
+export PATH=${PATH}:~/Library/Python/2.7/bin
+
+# tabtab source for serverless package
+# uninstall by removing these lines or running `tabtab uninstall serverless`
+[[ -f /Users/gregory.D/.nvm/versions/node/v10.6.0/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh ]] && . /Users/gregory.D/.nvm/versions/node/v10.6.0/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh
+# tabtab source for sls package
+# uninstall by removing these lines or running `tabtab uninstall sls`
+[[ -f /Users/gregory.D/.nvm/versions/node/v10.6.0/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh ]] && . /Users/gregory.D/.nvm/versions/node/v10.6.0/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh
+# tabtab source for slss package
+# uninstall by removing these lines or running `tabtab uninstall slss`
+[[ -f /Users/gregory.D/.config/yarn/global/node_modules/tabtab/.completions/slss.zsh ]] && . /Users/gregory.D/.config/yarn/global/node_modules/tabtab/.completions/slss.zsh
