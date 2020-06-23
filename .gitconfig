@@ -1,6 +1,6 @@
 [user]
     name = Gregory Desfour
-    email = gregory.desfour@accedo.tv
+	email = 4745060-gouegd@users.noreply.gitlab.com
 [color]
     diff = auto
     status = auto
@@ -38,6 +38,7 @@
     subup = submodule update --rebase --remote
     pullall = "!git pull --recurse-submodules && git submodule update --recursive"
     pa = "!git pullall"
+    pupu = "!git push -u origin HEAD:$(git branch --show-current)  -o merge_request.create -o merge_request.target=master"
 [pull]
     rebase = true
 [push]

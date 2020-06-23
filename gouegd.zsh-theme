@@ -10,4 +10,7 @@ ZSH_THEME_GIT_PROMPT_CLEAN=""
 ZSH_THEME_GIT_PROMPT_AHEAD="%{$fg[magenta]%} ↑"
 ZSH_THEME_GIT_PROMPT_STASHED="%{$fg[red]%} ♥"
 
+ZSH_THEME_AWS_PREFIX="("
+ZSH_THEME_AWS_SUFFIX=")"
+SHOW_AWS_PROMPT=false
 PROMPT='${retStatus}%{$fg[cyan]%}%1~%{$reset_color%}$(git_prompt_info)$(git_prompt_status) %{$reset_color%}'

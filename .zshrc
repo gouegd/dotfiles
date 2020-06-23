@@ -121,35 +121,26 @@ alias psg='ps -ef | grep'
 alias lt='ls -alFrt'
 #
 alias pstree='pstree -G'
-alias json='python -m json.tool | pygmentize -l json'
+# alias json='python -m json.tool | pygmentize -l json'
+alias json='tee ~/lastfx.json | fx'
+alias fxx='fx ~/lastfx.json'
 alias grep='grep --color'
 alias t='tig status'
 alias jira='fn() { open https://debitsuccess.atlassian.net/browse/CRMWEB-$1 };fn'
 
 # NVM
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-# Elmenv
-#export PATH="$HOME/.elmenv/bin:$PATH"
-#eval "$(elmenv init -)"
-# Go
-#export GOPATH="$HOME/gocode"
-#export PATH="$GOPATH/bin:$PATH"
-# yarn
-#export PATH="$PATH:`yarn global bin`"
-# Android
-#export PATH=${PATH}:${ANDROID_HOME}/tools
-#export PATH=${PATH}:${ANDROID_HOME}/platform-tools
-# AWS
-export PATH=${PATH}:~/Library/Python/2.7/bin
+# This loads nvm
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 
-# tabtab source for serverless package
-# uninstall by removing these lines or running `tabtab uninstall serverless`
-[[ -f /Users/gregory.D/.nvm/versions/node/v10.6.0/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh ]] && . /Users/gregory.D/.nvm/versions/node/v10.6.0/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh
-# tabtab source for sls package
-# uninstall by removing these lines or running `tabtab uninstall sls`
-[[ -f /Users/gregory.D/.nvm/versions/node/v10.6.0/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh ]] && . /Users/gregory.D/.nvm/versions/node/v10.6.0/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh
-# tabtab source for slss package
-# uninstall by removing these lines or running `tabtab uninstall slss`
-[[ -f /Users/gregory.D/.config/yarn/global/node_modules/tabtab/.completions/slss.zsh ]] && . /Users/gregory.D/.config/yarn/global/node_modules/tabtab/.completions/slss.zsh
+# AWS CLI v2
+export PATH="/usr/local/bin/aws_completer:$PATH"
+
+# rust, rustup, cargo
+export PATH="$HOME/.cargo/bin:$PATH"
+
+export AWS_DEFAULT_REGION=ap-southeast-2
+
+# AWS CLI 2 autocomplete
+autoload bashcompinit && bashcompinit
+complete -C '/usr/local/bin/aws_completer' aws
