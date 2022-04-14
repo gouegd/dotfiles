@@ -56,7 +56,7 @@ plugins=(macos fasd)
 
 # User configuration
 
-export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/homebrew/bin"
 # export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_51.jdk/Contents/Home
 export ANDROID_HOME=~/Library/Android/sdk
 # export SPRING_OUTPUT_ANSI_ENABLED=ALWAYS

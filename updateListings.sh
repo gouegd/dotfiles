@@ -1,1 +1,1 @@
-brew list > ~/dotfiles/brewlist.txt
+brew list > ~/code/dotfiles/brewlist.txt
