@@ -52,7 +52,7 @@ ZSH_THEME="gouegd"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(osx fasd)
+plugins=(macos fasd)
 
 # User configuration
 
@@ -63,19 +63,6 @@ export ANDROID_HOME=~/Library/Android/sdk
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
-
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
-
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
-
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
 
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
@@ -126,21 +113,80 @@ alias json='tee ~/lastfx.json | fx'
 alias fxx='fx ~/lastfx.json'
 alias grep='grep --color'
 alias t='tig status'
-alias jira='fn() { open https://debitsuccess.atlassian.net/browse/CRMWEB-$1 };fn'
-
-# NVM
-export NVM_DIR="$HOME/.nvm"
-# This loads nvm
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-
-# AWS CLI v2
-export PATH="/usr/local/bin/aws_completer:$PATH"
+alias jira='fn() { open https://vendhq.atlassian.net/jira/software/projects/PAY/boards/$1 };fn'
 
 # rust, rustup, cargo
-export PATH="$HOME/.cargo/bin:$PATH"
+# export PATH="$HOME/.cargo/bin:$PATH"
 
-export AWS_DEFAULT_REGION=ap-southeast-2
+# function av() {
+# if [[ $1 == "-h" ]];then
+#     echo -e "Usage: $0 [role-to-assume] command"
+#     echo -e ""
+#     echo -e "If a role is not provided, it will exit as the default behaviour is to drop you in a subshell."
+#     echo -e "To add another role, edit the av() function in your ~/.zshrc or ~/.bashrc."
+#     echo -e "Make sure to configure the role in your ~/.aws/config file as well."
+#     return 0
+# fi
+#     if [[ $# -ge 2 ]]; then
+#         case $1 in
+#             engineer)
+#                 aws-vault exec engineer -- ${@:2}
+#             ;;
+#             *)
+#                 echo "Unknown profile $1. Exiting."
+#             ;;
+#         esac
+#     else
+#         echo "No command detected. Exiting."
+#     fi
+# }
 
-# AWS CLI 2 autocomplete
-autoload bashcompinit && bashcompinit
-complete -C '/usr/local/bin/aws_completer' aws
+# NVM for zsh
+# source ~/.zsh-nvm/zsh-nvm.plugin.zsh
+
+# AWS Vault info
+# if [[ $AWS_VAULT ]]; then
+#     export PS1=$PS1$'\e[0;32m('$AWS_VAULT$')\e[0m '
+# fi
+
+# Go
+export GOPATH=~/go
+# export GOPRIVATE="github.com/vend"
+
+export PATH="$GOPATH/bin:$PATH"
+
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+
+function jwt_decode(){
+    jq -R 'split(".") | .[1] | @base64d | fromjson' <<< "$1"
+}
+
+# Our ECR address
+export ecr=542640492856.dkr.ecr.us-west-2.amazonaws.com
+
+# Below AWS configs from https://github.com/vend/home/blob/master/variables.sh
+# For most engineers, they likely want to use the engineer role so we
+# should default to that out of the box. AWS_PROFILE has precident over
+# this role however so if you're looking to do a few commands with elevated
+# privileges or want to override this shell script, you should set AWS_PROFILE
+# or use the --profile flag
+export AWS_DEFAULT_PROFILE=team-payments
+export AWS_DEFAULT_REGION=us-west-2
+
+# By default, the AWS credential check doesn't check ~/.aws/config when
+# checking for credential sources. We have ~/.aws/config use
+# saml2aws as a `credential_process` where it invokes saml2aws and returns
+# a SAML response. In order to authenticate Terraform + applications that use
+# the SDK, we can tell the SDK to load the config, which indirectly triggers
+# the credential process. In short, this lets us have a flow like so:
+# terraform plan -> aws cli -> aws config -> saml2aws -> trigger onelogin mfa
+# -> aws cli receives creds -> carry on as normal
+export AWS_SDK_LOAD_CONFIG=true
+
+# This allows us to retrieve packages from Github since most repos are private
+export GOPRIVATE="github.com/vend"
+
+# vend functions for aws (mainly aws-envs)
+# source ~/code/home/functions.sh

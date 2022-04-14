@@ -7,13 +7,10 @@
     branch = auto
 [alias]
     s = status
-    cp = cherry-pick
     st = status -s
-    cl = clone
     ci = commit
     co = checkout
     br = branch
-    diff = diff --word-diff
     dc = diff --cached
     #verifier ce qu'on va commiter (et non pusher)
     ds = diff --staged
@@ -23,31 +20,36 @@
     ld = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=relative
     lt = "log --graph --oneline --decorate --all"
     logtree = "log --graph --oneline --decorate --all"
-    sl = stash list
-    sa = stash apply
-    ss = stash save
-    sp = stash pop
     conf = config --edit --global
     f = "!git ls-files | grep -i"
     grep = grep -Ii
     la = "!git config -l | grep alias | cut -c 7-"
-    ri = rebase -i
-    unstage = reset HEAD --
     d = difftool
     all = "!git add -A :/"
     subup = submodule update --rebase --remote
     pullall = "!git pull --recurse-submodules && git submodule update --recursive"
-    pa = "!git pullall"
     pupu = "!git push -u origin HEAD:$(git branch --show-current)  -o merge_request.create -o merge_request.target=master"
 [pull]
     rebase = true
 [push]
     default = simple
-[diff]
-    tool = vimdiff
-[difftool]
-    prompt = false
 [rerere]
     enabled = true
 [core]
 	editor = vim
+[url "git@github.com:"]
+	insteadof = https://github.com/
+[init]
+	defaultBranch = main
+# git-delta START
+[core]
+    pager = delta
+[interactive]
+    diffFilter = delta --color-only
+[delta]
+    navigate = true
+[merge]
+    conflictstyle = diff3
+[diff]
+    colorMoved = default
+# git-delta END
