@@ -190,3 +190,7 @@ export GOPRIVATE="github.com/vend"
 
 # vend functions for aws (mainly aws-envs)
 # source ~/code/home/functions.sh
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+export PNPM_HOME="/Users/gregory.desfour/Library/pnpm"
+export PATH="$PNPM_HOME:$PATH"
