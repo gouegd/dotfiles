@@ -1,0 +1,6 @@
+os:
+  edit: 'kak -- {{filename}}'
+  editAtLine: 'kak +{{line}} -- {{filename}}'
+  editAtLineAndWait: 'kak +{{line}} -- {{filename}}'
+  editInTerminal: true
+  

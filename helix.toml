@@ -1,0 +1,22 @@
+theme = "dracula"
+
+[keys.normal." "]
+K = ":toggle-option lsp.display-inlay-hints"
+[editor.statusline]
+center = ["version-control"]
+mode.normal = "n"
+mode.insert = "i"
+mode.select = "v"
+
+[editor]
+idle-timeout = 0
+completion-trigger-len = 1
+bufferline = "multiple"
+color-modes = true
+
+[editor.lsp]
+goto-reference-include-declaration=false
+
+[editor.whitespace.render]
+tab = "all"
+

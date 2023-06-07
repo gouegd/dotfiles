@@ -1,3 +1,10 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 # Path to your oh-my-zsh installation.
 export ZSH=~/.oh-my-zsh
 
@@ -43,7 +50,7 @@ ZSH_THEME="gouegd"
 # Uncomment the following line if you want to change the command execution time
 # stamp shown in the history command output.
 # The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
-# HIST_STAMPS="mm/dd/yyyy"
+HIST_STAMPS="yyyy-mm-dd"
 
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
@@ -52,13 +59,13 @@ ZSH_THEME="gouegd"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(macos fasd)
+plugins=(macos)
 
 # User configuration
 
-export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/homebrew/bin"
+export PATH="/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 # export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_51.jdk/Contents/Home
-export ANDROID_HOME=~/Library/Android/sdk
+# export ANDROID_HOME=~/Library/Android/sdk
 # export SPRING_OUTPUT_ANSI_ENABLED=ALWAYS
 # export MANPATH="/usr/local/man:$MANPATH"
 
@@ -77,21 +84,11 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #Greg: From http://www.cyberciti.biz/tips/bash-aliases-mac-centos-linux-unix.html
 #
-alias calc='bc -l'
-### Show hidden files ##
-alias l.='ls -d .*'
-alias ll='ls -alFG'
-alias la='ls -AG'
-alias l='ls -CFG'
-alias ls='ls -G'
+alias ll='exa -l'
+alias l='exa'
 #
-alias bc='bc -l'
 ## Allow mkdir foo/bar even if foo does not exist yet
 alias mkdir='mkdir -pv'
-## Colourful diff
-alias diff='colordiff'
-##Prettier mount
-alias mount='mount |column -t'
 #
 alias h='history'
 alias path='echo -e ${PATH//:/\\n}'
@@ -109,45 +106,25 @@ alias lt='ls -alFrt'
 #
 alias pstree='pstree -G'
 # alias json='python -m json.tool | pygmentize -l json'
+# serve current dir on localhost:80
+alias serve='python3 -m http.server 80'
 alias json='tee ~/lastfx.json | fx'
 alias fxx='fx ~/lastfx.json'
 alias grep='grep --color'
-alias t='tig status'
+
+# lazygit config
+export LG_CONFIG_FILE="$HOME/code/dotfiles/.lazygit"
+alias t='lazygit'
+
+alias d='lazydocker'
+alias dc='docker compose'
 alias jira='fn() { open https://vendhq.atlassian.net/jira/software/projects/PAY/boards/$1 };fn'
 
 # rust, rustup, cargo
 # export PATH="$HOME/.cargo/bin:$PATH"
 
-# function av() {
-# if [[ $1 == "-h" ]];then
-#     echo -e "Usage: $0 [role-to-assume] command"
-#     echo -e ""
-#     echo -e "If a role is not provided, it will exit as the default behaviour is to drop you in a subshell."
-#     echo -e "To add another role, edit the av() function in your ~/.zshrc or ~/.bashrc."
-#     echo -e "Make sure to configure the role in your ~/.aws/config file as well."
-#     return 0
-# fi
-#     if [[ $# -ge 2 ]]; then
-#         case $1 in
-#             engineer)
-#                 aws-vault exec engineer -- ${@:2}
-#             ;;
-#             *)
-#                 echo "Unknown profile $1. Exiting."
-#             ;;
-#         esac
-#     else
-#         echo "No command detected. Exiting."
-#     fi
-# }
-
 # NVM for zsh
 # source ~/.zsh-nvm/zsh-nvm.plugin.zsh
-
-# AWS Vault info
-# if [[ $AWS_VAULT ]]; then
-#     export PS1=$PS1$'\e[0;32m('$AWS_VAULT$')\e[0m '
-# fi
 
 # Go
 export GOPATH=~/go
@@ -194,3 +171,15 @@ export GOPRIVATE="github.com/vend"
 
 export PNPM_HOME="/Users/gregory.desfour/Library/pnpm"
 export PATH="$PNPM_HOME:$PATH"
+
+export PATH="/Users/gregory.desfour/.deno/bin:$PATH"
+source /opt/homebrew/opt/powerlevel10k/powerlevel10k.zsh-theme
+
+# Flutter
+export PATH="$PATH:/Users/gregory.desfour/code/flutter/bin"
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# zoxide, replaces fasd
+eval "$(zoxide init zsh)"

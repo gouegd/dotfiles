@@ -36,7 +36,7 @@
 [rerere]
     enabled = true
 [core]
-	editor = vim
+	editor = hx
 [url "git@github.com:"]
 	insteadof = https://github.com/
 [init]
@@ -53,3 +53,8 @@
 [diff]
     colorMoved = default
 # git-delta END
+[filter "lfs"]
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f

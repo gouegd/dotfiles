@@ -1,4 +1,4 @@
-local retStatus="%(?:%{$fg[green]%}√:%{$fg[red]%}🐛) "
+local retStatus="%(?:🌀:❌) "
 
 #info
 ZSH_THEME_GIT_PROMPT_PREFIX=" %{$fg[blue]%}"
