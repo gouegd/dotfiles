@@ -15,7 +15,8 @@ export ZSH=~/.oh-my-zsh
 #ZSH_THEME="sunrise"
 #ZSH_THEME="bureau"
 #ZSH_THEME="norm"
-ZSH_THEME="gouegd"
+# ZSH_THEME="gouegd"
+ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
