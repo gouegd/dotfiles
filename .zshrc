@@ -15,8 +15,7 @@ export ZSH=~/.oh-my-zsh
 #ZSH_THEME="sunrise"
 #ZSH_THEME="bureau"
 #ZSH_THEME="norm"
-# ZSH_THEME="gouegd"
-ZSH_THEME="powerlevel10k/powerlevel10k"
+ZSH_THEME="gouegd"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -120,6 +119,7 @@ alias t='lazygit'
 alias d='lazydocker'
 alias dc='docker compose'
 alias jira='fn() { open https://vendhq.atlassian.net/jira/software/projects/PAY/boards/$1 };fn'
+alias gt='gotestsum --format-hivis --format-hide-empty-pkg'
 
 # rust, rustup, cargo
 # export PATH="$HOME/.cargo/bin:$PATH"
@@ -169,9 +169,6 @@ export GOPRIVATE="github.com/vend"
 # vend functions for aws (mainly aws-envs)
 # source ~/code/home/functions.sh
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-export PNPM_HOME="/Users/gregory.desfour/Library/pnpm"
-export PATH="$PNPM_HOME:$PATH"
 
 export PATH="/Users/gregory.desfour/.deno/bin:$PATH"
 source /opt/homebrew/opt/powerlevel10k/powerlevel10k.zsh-theme
